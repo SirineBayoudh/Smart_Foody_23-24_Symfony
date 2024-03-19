@@ -1,0 +1,74 @@
+{% extends 'base_back.html.twig' %}
+
+
+{% block body %}
+    <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Striped Table</h4>
+                
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      
+                        <tr>
+                          <th>
+                           Nom du stock
+                          </th>
+                          <th>
+                           Réference du produit
+                          </th>
+                          <th>
+                            Marque
+                          </th>
+                          <th>
+                            Quantités
+                          </th>
+                           <th>
+                           Nombre vendus
+                          </th>
+                            <th>
+                           cout
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         {% for s in stocks %}
+                        <tr>
+                          <td class="py-1">
+                              {{ s.nom}}
+                          </td>
+                          <td>
+                          {{ s.refProduit}}
+                          </td>
+                          <td> 
+                          {{ s.marque}}
+                          </td>
+                          <td>
+                           {{ s.quantite}}
+                            
+                          </td>
+                          <td>
+                             {{ s.nbvendu}}
+                            
+                          </td>
+                           <td>
+                             {{ s.cout}}
+                          </td>
+                            <td>
+                            {{ s.cout}}  
+                          </td>
+                        </tr>
+                        {% endfor %}
+                     
+          
+               
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}
+
+

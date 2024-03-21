@@ -3,25 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\DBAL\Types\Types;
+use App\Repository\AvisRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Avis
- *
- * @ORM\Table(name="avis")
- * @ORM\Entity
- * @ORM\Entity(repositoryClass="App\Repository\MyEntityRepository")
-
- */
+#[ORM\Entity(repositoryClass: AvisRepository::class)]
 class Avis
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_avis", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_avis")]
     private $idAvis;
 
     /**

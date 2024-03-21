@@ -2,18 +2,16 @@
 
 namespace App\Entity;
 
+
+use App\Repository\ChatRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-
+#[ORM\Entity(repositoryClass: ChatRepository::class)]
 class Chat
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_chat", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_chat")]
     private $idChat;
 
     /**

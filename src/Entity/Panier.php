@@ -2,25 +2,17 @@
 
 namespace App\Entity;
 
+use App\Repository\PanierRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Panier
- *
- * @ORM\Table(name="panier")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: PanierRepository::class)]
 class Panier
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_panier", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_panier")]
     private $idPanier;
-
+    
     /**
      * @var int
      *

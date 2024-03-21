@@ -3,23 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\DBAL\Types\Types;
+use App\Repository\ConseilRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Conseil
- *
- * @ORM\Table(name="conseil")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: ConseilRepository::class)]
 class Conseil
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_conseil", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_conseil")]
     private $idConseil;
 
     /**

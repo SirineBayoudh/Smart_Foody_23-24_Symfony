@@ -2,23 +2,15 @@
 
 namespace App\Entity;
 
+use App\Repository\ProduitRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Produit
- *
- * @ORM\Table(name="produit")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ref", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "ref")]
     private $ref;
 
     /**

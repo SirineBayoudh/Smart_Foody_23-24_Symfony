@@ -2,23 +2,15 @@
 
 namespace App\Entity;
 
+use App\Repository\LigneCommandeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * LigneCommande
- *
- * @ORM\Table(name="ligne_commande")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: LigneCommandeRepository::class)]
 class LigneCommande
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_lc", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_lc")]
     private $idLc;
 
     /**

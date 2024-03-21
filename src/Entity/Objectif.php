@@ -2,23 +2,15 @@
 
 namespace App\Entity;
 
+use App\Repository\ObjectifRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * Objectif
- *
- * @ORM\Table(name="objectif")
- * @ORM\Entity
- */
+#[ORM\Entity(repositoryClass: ObjectifRepository::class)]
 class Objectif
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_obj", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "IDENTITY")]
+    #[ORM\Column(type: "integer", name: "id_obj")]
     private $idObj;
 
     /**
